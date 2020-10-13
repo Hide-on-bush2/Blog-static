@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>ML-Perceptron Model | Hide on bush</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.76.2" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="ML-Perceptron Model" />
+<meta property="og:description" content="Machine Learning" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hide-on-bush2.gitee.io/post/ml/" />
+<meta property="article:published_time" content="2020-09-15T22:30:49+08:00" />
+<meta property="article:modified_time" content="2020-09-15T22:30:49+08:00" />
+<meta itemprop="name" content="ML-Perceptron Model">
+<meta itemprop="description" content="Machine Learning">
+<meta itemprop="datePublished" content="2020-09-15T22:30:49+08:00" />
+<meta itemprop="dateModified" content="2020-09-15T22:30:49+08:00" />
+<meta itemprop="wordCount" content="282">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ML-Perceptron Model"/>
+<meta name="twitter:description" content="Machine Learning"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Hide on bush
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/post/" title="Articles page">
+              Articles
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/homework/" title="Homework page">
+              Homework
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/paper/" title="Paper page">
+              Paper
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+<a href="https://twitter.com/GoHugoIO" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+<a href="https://github.com/Hide-on-bush2" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        ARTICLES
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://hide-on-bush2.gitee.io/post/ml/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://hide-on-bush2.gitee.io/post/ml/&amp;text=ML-Perceptron%20Model" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://hide-on-bush2.gitee.io/post/ml/&amp;title=ML-Perceptron%20Model" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">ML-Perceptron Model</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-09-15T22:30:49+08:00">September 15, 2020</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="机器学习之朴素贝叶斯法">机器学习之朴素贝叶斯法</h1>
+
+<h2 id="简介">简介</h2>
+
+<p>朴素贝叶斯法是一种分类方法，主要是从训练集中根据统计规律学得分类方法。对于给定的输入x，利用贝叶斯定理求出后验概率最高的类别y</p>
+
+<h2 id="基本方法和推导">基本方法和推导</h2>
+
+<ul>
+<li>Input:$x = (x^{(1)}, x^{(2)}, ..., x^{n})$，为输入变量的特征向量</li>
+<li>Output:类别$y\in {c_1, c_2, ..., c_k}$</li>
+</ul>
+
+<p>定义$X$为输入空间上的随机变量，$Y$是输出空间中的随机变量，我们要求的便是$max_{k}(p(Y = c_k|X=x))$，具体的方法是求出每一个$P_k(Y=c_k|X=x)$，然后选择概率最大的那个分类。</p>
+
+<p>这个概率是后验概率，没办法直接通过统计数据得来（<a href="https://zhuanlan.zhihu.com/p/26464206">关于先验概率和后验概率</a>），所以需要利用到贝叶斯定理：
+<span  class="math">\(P(Y=c_k|X=x) = \frac{P(Y=c, X=x)}{P(X=x)} = \\\frac{P(X=x|Y=c_k)P(Y=c_k))}{\sum_kP(X=x|Y=c_k)P(Y=c_k)} \tag{1}\)</span>
+这里为了降低计算的复杂度做了一个合理的假设：输入空间中的特征都是不相关的，则：
+<span  class="math">\(P(X=x|Y=c_k) = P(X^{(1)} = x^{(1)}, X^{(2)} \\= x^{(2)}, ..., X^{(n)} = x^{(n)}|Y=c_k) \\= \Pi_{j=1}^nP(X^{(j)}=x^{(k)}|Y=c_k) \tag{2}\)</span>
+这也是为什么叫“朴素贝叶斯法”（naive bayes），是通过合理性假设简化了运算的缘故。
+则将（2）式代入到（1）式可以得到：
+<span  class="math">\(P(Y=c_k|X=x) \\= \frac{P(Y=c_k)\Pi_{j}P(X^{(j)} \\= x^{(j)}|Y=c_k)}{\sum_kP(Y=c_k)\Pi_{j}P(X^{(j)} = x^{(j)}|Y=c_k)} \tag{3}\)</span>
+这里令$P^{'}_k = P(Y=c<em>k)\Pi</em>{j}P(X^{(j)} = x^{(j)}|Y=c_k)$，则（3）式可变为：
+<span  class="math">\(P(Y=c_k|X=x) = \frac{P^{'}_k}{\sum_kP^{'}_k}\tag{4}\)</span>
+很明（4）分母对于一个训练集来说是一个定植，那么我们的朴素贝叶斯分类器便可以表示为：
+<span  class="math">\(y = argmaxP^{'}_k \\= argmaxP(Y=c_k)\Pi_{j}P(X^{(j)} = x^{(j)}|Y=c_k)\tag{5}\)</span></p>
+
+<h2 id="参数估计">参数估计</h2>
+
+<p>我们已经得到了朴素贝叶斯分类器的模型表示，接下来就是要求这个模型的参数。对于朴素贝叶斯法来说，需要学习的参数就是$P(Y=c_k)$和$P(X^{(j)} = x^{(j)}|Y=c_k)$，这里有两种参数估计的方法：</p>
+
+<h3 id="极大似然估计">极大似然估计</h3>
+
+<p>估计方法：</p>
+
+<ul>
+<li>先验概率$P(Y=c_k)$的极大似然估计是：$P(Y=c<em>k) = \frac{\sum</em>^NI(y_i = c_k)}{N}$，意思是在N训练实例中找出类别为$c_k$的个数，$I(y_i = c_k)$是一个指示函数，是指$y_i = c_k$为真的话返回1，否则返回0</li>
+<li>假设第$j$个特征$x^{(j)}$可能取值的集合为${a_{j1}, a_{j2}, ..., a_{jS<em>j}}$，条件概率$P(X^{(j)} = a</em>{jl}|Y=c<em>k)$的极大似然估计是$$P(X^{(j)} = a</em>{jl}|Y=c<em>k) = \frac{\sum</em><sup>NI(x_i</sup>{(j)}=a_{jl}, y_i=c<em>k)}{\sum</em>^NI(y_i=c_k)}$$意思是从分类$c<em>k$中求得特征是$a</em>{jl}$的先验概率</li>
+</ul>
+
+<h3 id="贝叶斯估计" i="1">贝叶斯估计</h3>
+
+<p>用极大似然估计会有一个缺点：会出现所要估计的概率值为0的情况。假如某一项的数据为0，则$P(X^{(i)} = x^{(i)}|Y=c_k) = 0$，则整个概率都为0，这使得模型的泛化效果不太好。
+估计方法：</p>
+
+<ul>
+<li>先验概率$P_{\lambda}(Y=c<em>k) = \frac{\sum</em>^NI(y_i = c_k) + \lambda}{N + K\lambda}$</li>
+<li>条件概率
+<span  class="math">\(
+P\_{\lambda}(X^{(j)} = a\_{jl}|Y=c\_k) \\= \frac{\sum\_{i=1}^NI(x\_i^{(j)} = a\_{jl}, y\_i = c\_k) + \lambda}{\sum\_{i=1}^NI(y\_i=c\_k) + S\_j\lambda}
+\)</span>
+意思是在随机变量各个取值的频数上赋予一个正数$\lambda$，当$\lambda = 0$时便是最大似然估计。当$\lambda=1$时，称为拉普拉斯平滑(Laplace smoothing)。对于任何$l = 1, 2, ..., S<em>j, k = 1, 2, ..., K$有：
+$$P</em>{\lambda}(X^{(j)} = a_{jl}|Y=c<em>k)&gt;0, \\sum</em><sup>{S_j}P(X</sup>(j) = a_{jl}|Y=c_k) = 1$$</li>
+</ul>
+
+<h2 id="学习与分类算法" i="1" l="1">学习与分类算法</h2>
+
+<ul>
+<li>计算先验概率$P(Y=c<em>k)$和条件概率$P(X^{(j)} = a</em>{jl}|Y=c_k)$</li>
+<li>对于输入的实例$x=(x^{(1)}, x^{(2)}, ..., x<sup>{(n)})$，计算$$P(Y=c<em>k)\Pi</em></sup>n(X^{(j)} = x^{(j)}|Y=c_k)$$</li>
+<li>根据后验概率的大小确定实例的分类：<span  class="math">\(y = argmax_{c_k}P(Y=c_k)\Pi_{j=1}^n(X^{(j)} = x^{(j)}|Y=c_k)\)</span></li>
+</ul>
+
+<h2 id="代码实现" j="1">代码实现</h2>
+<pre><code>class Bayes_classifier:
+	def __init__(self, data_set, num_class, num_eigen):
+		self.data_set = data_set
+		self.num_node = data_set.shape[0]
+		self.num_class = num_class
+		self.num_eigen = num_eigen
+		self.prior_probability = np.zeros(self.num_class)
+		self.conditional_probability = np.zeros((self.num_class, self.num_eigen, 3))
+
+	def learn(self):
+		for node in self.data_set:
+			t_class = node[self.num_eigen]
+			self.prior_probability[t_class] += 1
+		self.prior_probability = self.prior_probability / self.num_node
+
+		for c in range(self.num_class):
+			for node in self.data_set:
+				if node[self.num_eigen] == c:
+					for j in range(self.num_eigen):
+						self.conditional_probability[node[self.num_eigen], j, node[j]] += 1
+
+			self.conditional_probability[c, :, :] = self.conditional_probability[c, :, :] / (self.prior_probability[c] * self.num_node)
+
+	def classify(self, node):
+		l = []
+		for c in range(self.num_class):
+			p_ck = self.prior_probability[c]
+			p_con = 1
+			for i in range(self.num_eigen):
+				p_con *= self.conditional_probability[c, i, node[i]]
+			l.append(p_ck * p_con)
+		idx = np.argsort(l)
+		return idx[len(idx)-1]
+
+	def get_model(self):
+		return self.prior_probability, self.conditional_probability</code></pre>
+<p><a href="https://github.com/Hide-on-bush2/machine_learning/tree/master/naive_bayes">github</a></p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://hide-on-bush2.gitee.io" >
+    &copy;  Hide on bush 2020 
+  </a>
+    <div>
+
+
+
+
+<a href="https://twitter.com/GoHugoIO" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+<a href="https://github.com/Hide-on-bush2" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+           extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+      
+      
+      
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i = 0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+
+    MathJax.Hub.Config({
+    
+    TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Paper on Hide on bush</title>
+    <link>https://hide-on-bush2.gitee.io/paper/</link>
+    <description>Recent content in Paper on Hide on bush</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 Mar 2017 12:00:00 -0500</lastBuildDate><atom:link href="https://hide-on-bush2.gitee.io/paper/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每周论文分享-2</title>
+      <link>https://hide-on-bush2.gitee.io/paper/week2/</link>
+      <pubDate>Tue, 15 Sep 2020 11:00:59 -0400</pubDate>
+      
+      <guid>https://hide-on-bush2.gitee.io/paper/week2/</guid>
+      <description>Week2-Adaptive Federated Learning in Resource Constrained Edge Computing Systems 一篇研究如何在有限的资源条件下进行联邦学习的论文，涉及到比较多的数学知识
+问题背景 如何有效利用给定数量的资源以最小化模型训练的损失函数。也就是对于传统的联邦学习机制，如何确定总的训练轮次$T$和全局模型的更新周期$\tau$($T = K\tau$，也就是每经过$\tau$轮次进行一次全局模型的更新)的最佳值，从而使得全局损失函数在此学习任务的给定资源约束下最小化，也就是说$T$和$\tau$的值具有一定的次数限制。可以将优化问题定义为： $$ min_{\tau, K \in {1, 2, 3, &amp;hellip;}}F(w^f), \
+s.t. (T+1)c_m + (k+1)b_m &amp;lt;= R_m, \forall m \in {1, &amp;hellip;, M}, T = K\tau $$
+核心思想 通过在训练过程中改变$\tau$的值，来动态调整全局模型更新的周期，并控制$T$的值，使得在资源有限的情况下保证训练的轮次尽可能多
+假设我们的学习目标：$w^* = argmin_wF(w)$，也就是理论上使得$F(w)$最小的那个值，论文先给出一个$F(w^f) - F(w^*)$的收敛上届，然后进一步提出一个适用于以上问题的优化算法。
+$F(w^f) - F(w^*)$的收敛上界 首先进行一些预定义，将$T$个迭代轮次分为$k$个间隔，以全局模型更新作为划分的点
+ 用$[k]$表示间隔$[(k-1)\tau, k\tau]$ 定义一个辅助参数：$v_{[k]}(t)$，计算方法为$v_{[k]}(t) = v_{[k]}(t - 1) - \eta \nabla F(v_{[k]}(t))$，为后面的证明服务，其中$t \in {(k-1)\tau, k\tau }$ 这个辅助参数会定时更新，即$v_{[k]}((k-1)\tau) = w({k-1}\tau)$  接下来求解$F(w^f) - F(w^*)$的收敛上界，分为两个步骤：</description>
+    </item>
+    
+    <item>
+      <title>每周论文分享-3</title>
+      <link>https://hide-on-bush2.gitee.io/paper/week3/</link>
+      <pubDate>Tue, 15 Sep 2020 11:00:59 -0400</pubDate>
+      
+      <guid>https://hide-on-bush2.gitee.io/paper/week3/</guid>
+      <description>Blockchain-Federated-Learning and Deep Learning Models for COVID-19 detection using CT Imaging 这是一篇很有意思的论文，讲如何利用胶囊网络/联邦学习/区块链来帮助医生诊断新冠患者
+背景 一般来说，对一名疑似患者进行诊断是否真正患有新冠肺炎需要耗费大量的时间和医疗费用。在这种情况下，用CT图片来训练一个AI模型，然后用该模型来进行诊断则显得廉价得多。但是数据的收集是一个主要的问题，不同的医疗机构之间存在着严重的“数据孤岛“问题，将所有的CT图片集中在一个医疗机构显得不太现实，也很难实现。这时候利用联邦学习可以在各个医疗机构不需要暴露它们的数据的前提下训练出一个令人满意的AI模型，来提升诊断的准确率和降低诊断的成本
+核心思想 AI模型用的是胶囊网络，用联邦学习保证数据的隐私性，将每一次全局更新看成是一项交易，共识算法用的是工作量证明(PoW)
+胶囊网络 使用CapsNet而不是CNN的原因是前者的效果更好，并且能达到举一反三的效果
+它和一般的ANN(Artificail Neural Network)也非常像，只不过将映射的方式和激活函数等换了一下：
+联邦学习 使用的是一般的联邦学习架构：
+在这篇论文中将联邦学习与区块链进行结合，训练方法为：
+区块链 区块链还可以用来进行数据共享。由于将患者的数据放到区块链上花销过于巨大，因此将数据保存在医疗机构中，区块链用来帮助检索这些数据。当一个医院提供数据时，它会在区块链中发起一项交易。每一个数据共享和检索过程的交易过程如下图所示：
+多家医院可以协作共享数据并训练模型以预测最佳的结果，并且这种数据共享和数据检索的过程可以通过区块链的技术来保证数据的隐私性，数据共享的过程如下图所示：
+总结 个人觉得这篇文章非常有意思，也非常地有意义。这篇文章提供了一种将联邦学习和区块链技术结合起来的思路（这件事并不是很简单，因为联邦学习需要一个中心服务器，而区块链是去中心化的）。此外，我觉得新冠诊断这个场景与联邦学习非常契合，在医疗这方面联邦学习确实有着广泛的应用。</description>
+    </item>
+    
+    <item>
+      <title>每周论文分享-4</title>
+      <link>https://hide-on-bush2.gitee.io/paper/week4/</link>
+      <pubDate>Tue, 15 Sep 2020 11:00:59 -0400</pubDate>
+      
+      <guid>https://hide-on-bush2.gitee.io/paper/week4/</guid>
+      <description>ON THE CONVERGENCE OF FEDAVG ON NON-IID DATA 这篇论文给出了不需要分布数据集是IID的假设的一个收敛上界
+背景 现有的联邦学习关于收敛性证明的工作需要有以下两个假设：
+ 分布在不同的设备上的数据集是IID的 参与联邦学习的每一个设备都能与服务器保持稳定的连接  事实上这两个假设在现实部署的过程中是难以实现的，首先，保证不同设备上的数据集都是IID的显然是难以保证的，其次，我们也无法保证参与联邦学习的每一个设备都时刻保持有效的连接，当某一台设备关闭电源或者断开连接的是否，那么服务器和其他设备都需要等待这一台的重启或重新连接，这明显会造成很大的耗费
+对于第二个问题的解决办法是每次服务器向设备广播数据集的时候都会选择其中保持连接的一部分设备进行广播然后进行训练，而不是向所有的设备进行广播
+贡献 该论文主要有以下两个贡献：
+ 给出了不需要以上两个假设的两个收敛上界，分别包括Full Device Participation(每次都选择所有的设备来训练)和Partial Device Participation(每次只选择一部分的设备进行训练) 提出全局模型更新的步长需要衰减，并给出解释  收敛上界 这篇论文给出的收敛上界需要满足以下4个假设：
+然后它给出的Full Device Participation收敛上界是：
+给出的Partial Device Participation收敛上界是：
+步长衰减 论文支持，学习率的下降对于非IID环境下FedAvg的效果直观重要，他们提出了下面一条定理：
+除此之外，还有一些关于步长对于FedAvg收敛效果的讨论：
+ 定理1告诉我们，当$E &amp;gt; 1$并且学习步长递减的时候，FedAvg会逐渐收敛到最优 定理4告诉我们，当$E &amp;gt; 1$并且学习步长固定的时候，FedAvg不会收敛到最优  结论 这篇论文给出了不需要数据集为IID的假设的收敛上界，并且关于步长对于收敛性的影响进行了讨论，我觉得是一篇比较有开创性的文章。相关的数学证明我还会继续去研究一下</description>
+    </item>
+    
+    <item>
+      <title>每周论文分享-5</title>
+      <link>https://hide-on-bush2.gitee.io/paper/week5/</link>
+      <pubDate>Tue, 15 Sep 2020 11:00:59 -0400</pubDate>
+      
+      <guid>https://hide-on-bush2.gitee.io/paper/week5/</guid>
+      <description>Optimal Task Assignment to Heterogeneous Federated Learning Devices 背景 一个联邦学习系统的性能一般受以下两个因素影响：
+ 每一个训练周期的时间 训练周期的数量  第二个因素主要受到数据集的大小和数量的影响，因此该论文主要关注于第一个因素
+在联邦学习的一个训练周期中，一个设备需要花费的时间长短取决于它自身的计算能力和通信的效率。由于参与联邦学习的设备是异构的并且需要将数据同步到中央服务器中，一个训练周期的时间长短便取决于参与联邦学习中需要花费时间最长的设备，这会造成瓶颈，其他设备必须等待这一个最慢的设备才能进行下一轮训练
+定义 首先介绍一些定义：
+ $T\in N$:相同的、独立的、原子的训练任务，在这里我们可以简单地将其认做所有设备训练次数的总和 $R$:资源的集合，在这里我们可以将其认做为参与到联邦学习中的设备,$i\in R$，其中一个$i$代表一个设备 $A_i$：分配给设备$i$的训练任务的集合。在传统的联邦学习中我们每个训练轮次都会选择$R$中的一部分设备来进行训练，那么设备$i$如果选到进行训练的次数为$t$，则$A_i \triangleq t$ $C_i(A_i)$：设备$i$完成分配给它的训练任务所需要的花销（可以理解为训练时间） $C_{max}$：完成该次联邦学习任务所需要的时间  根据以上定义，我们可以得到以下等式：  等式1：完成一次联邦学习任务所需要的时间等于所有设备中花费最多的时间 等式2：根据$A_i$和$T$的定义可得 等式3：分配给一个设备的训练任务有上界和下界 等式4：$C_i$是非递减函数 等式5：一个简单的加和 等式6：如果分配给一个设备的训练任务超过了它的上界，那它的花销时间为无穷大 等式7，8：$t \leq T$，$C_{max}^T = C_{max}$  算法 该算法会维护一个最小堆，存放的数据结构是$(C_i(A), i)$，也就是设备$i$以及分配给设备$i$的训练任务的一个二元组，整个算法大概是以下步骤：
+ 首先分配给每个设备$i$它的训练任务的下界：$A_i \leftarrow L_i$ 之后从$l+1$开始，每次从堆中取出一个二元组$(c, j)$，更新这个二元组的值，也就是将第$l+1$个训练任务分配给设备$j$：$A_j \leftarrow A_j + 1$，并且如果这个训练任务并没有超过设备$j$可以承受的最大训练任务数，将它压入栈中 最后输出训练任务的分配方式$A_i$  例子 总结 该论文所介绍的算法算是比较容易可以想到的，个人也觉得有一些局限性，例如：
+ 我们在使用该算法去分配训练任务的时候，需要提前知道具体某个设备完成某个训练任务的时间 即便我们可以通过该设备上数据集或者通信效率去估算这个时间，但也有着以下问题：  如果某一个设备通信效率很好，那么该算法就会反复选择该设备进行训练，同样，那些通信时间长的设备将几乎不怎么参与到训练中，本论文对这个问题的解决办法仅仅是对每一个设备的训练任务数设定了一个上下界 该算法可能会对资源分配的公平性产生影响    总的来说，该算法虽然可以减少一个联邦学习任务所需要的训练时间，但它同时会牺牲一些训练出来的模型的性能</description>
+    </item>
+    
+  </channel>
+</rss>

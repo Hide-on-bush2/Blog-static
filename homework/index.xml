@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homework on Hide on bush</title>
+    <link>https://hide-on-bush2.gitee.io/homework/</link>
+    <description>Recent content in Homework on Hide on bush</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 Mar 2017 12:00:00 -0500</lastBuildDate><atom:link href="https://hide-on-bush2.gitee.io/homework/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data Representation</title>
+      <link>https://hide-on-bush2.gitee.io/homework/homework3/</link>
+      <pubDate>Mon, 21 Sep 2020 11:00:59 -0400</pubDate>
+      
+      <guid>https://hide-on-bush2.gitee.io/homework/homework3/</guid>
+      <description>H3-Data Representation 第一题-计算  (2)int8_t x = 0xd3 = 1101 0011出现溢出错误 (4)int9_t z = y - x出现溢出错误，因为y是负数，x是正数，那么z应该是负数，但最后的结果是z = 0111 1010是正数 (7)float x = 0.45存在精度误差  第二题-名词解释 Method of complements In mathematics and computing, the method of complements is a technique to encode a symmetric range of positive and negative integers in a way that they can use the same algorithm (hardware) for addition throughout the whole range. For a given number of places half of the possible representations of numbers encode the positive numbers, the other half represents their respective additive inverses.</description>
+    </item>
+    
+    <item>
+      <title>Data Representation II</title>
+      <link>https://hide-on-bush2.gitee.io/homework/homework4/</link>
+      <pubDate>Mon, 21 Sep 2020 11:00:59 -0400</pubDate>
+      
+      <guid>https://hide-on-bush2.gitee.io/homework/homework4/</guid>
+      <description>H4-Data Representation II 第一题-名词解释 ASCII ASCII (/ˈæskiː/ (About this soundlisten) ASS-kee),[3]:6 abbreviated from American Standard Code for Information Interchange, is a character encoding standard for electronic communication. ASCII codes represent text in computers, telecommunications equipment, and other devices. Most modern character-encoding schemes are based on ASCII, although they support many additional characters.
+ASCII（发音： /ˈæski/ ASS-kee[1]，American Standard Code for Information Interchange，美国信息交换标准代码）是基于拉丁字母的一套电脑编码系统。它主要用于显示现代英语，而其扩展版本延伸美国标准信息交换码则可以部分支持其他西欧语言，并等同于国际标准ISO/IEC 646。
+Color Color (American English), or colour (Commonwealth English), is the characteristic of visual perception described through color categories, with names such as red, orange, yellow, green, blue, or purple.</description>
+    </item>
+    
+    <item>
+      <title>Gates and Circuits</title>
+      <link>https://hide-on-bush2.gitee.io/homework/homework5/</link>
+      <pubDate>Mon, 21 Sep 2020 11:00:59 -0400</pubDate>
+      
+      <guid>https://hide-on-bush2.gitee.io/homework/homework5/</guid>
+      <description>H5-Gates and Circuits 回答问题   Give the three representations of an AND gate and say in your words what AND means
+ 布尔表达式：$X = AB$ 真值表：    A B X     0 0 0   0 1 0   1 0 0   1 1 1     逻辑图：     Give the three representations of an XOR gate and say in your words what XOR means</description>
+    </item>
+    
+    <item>
+      <title>Number system</title>
+      <link>https://hide-on-bush2.gitee.io/homework/homework2/</link>
+      <pubDate>Tue, 15 Sep 2020 11:00:59 -0400</pubDate>
+      
+      <guid>https://hide-on-bush2.gitee.io/homework/homework2/</guid>
+      <description>H2-The Number System Base Conversion  1 minute 12 seconds = 72 seconds = 7.2e4 ms (7A)_13 = 7 * 13 + 10 = 101 (7A)_16 = 7 * 16 + 10 = 122 (7A)_16 = (0111)(1010)_2 = (172)_8 (1011011)_2 = (133)_8 = (5B)_16 (678)_10 = (1010100110)_2 = (1246)_8 (111)_2 + (101)_2 = (100)_2  Word Explanation Infomation Information can be thought of as the resolution of uncertainty; it is that which answers the question of &amp;ldquo;What an entity is&amp;rdquo; and thus defines both its essence and nature of its characteristics.</description>
+    </item>
+    
+    <item>
+      <title>Word explanation</title>
+      <link>https://hide-on-bush2.gitee.io/homework/homework1/</link>
+      <pubDate>Fri, 11 Sep 2020 11:00:59 -0400</pubDate>
+      
+      <guid>https://hide-on-bush2.gitee.io/homework/homework1/</guid>
+      <description>H1-Introduction to Software Engineering Computer A computer is a machine that can be instructed to carry out sequences of arithmetic or logical operations automatically via computer programming. Modern computers have the ability to follow generalized sets of operations, called programs. These programs enable computers to perform an extremely wide range of tasks. A &amp;ldquo;complete&amp;rdquo; computer including the hardware, the operating system (main software), and peripheral equipment required and used for &amp;ldquo;full&amp;rdquo; operation can be referred to as a computer system.</description>
+    </item>
+    
+  </channel>
+</rss>
